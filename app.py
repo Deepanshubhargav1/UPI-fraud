@@ -40,15 +40,6 @@ merch_cat = st.selectbox("Select merchant category", mc)
 
 amt = st.number_input("Enter transaction amount",step=0.1)
 
-st.write("OR")
-
-df = pd.read_csv("sample.csv")
-st.write("CSV Format:", df)
-
-uploaded_file = st.file_uploader("Upload CSV", type=["csv"])
-if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file)
-    st.write("Uploaded CSV:", df)
 
 button_clicked = st.button("Check transaction(s)")
 st.markdown(
