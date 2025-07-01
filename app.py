@@ -54,6 +54,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+results = []
 if button_clicked:
     tt_oh = []
     for i in range(len(tt)):
@@ -68,7 +69,8 @@ if button_clicked:
     for i in range(len(mc)):
         mc_oh.append(0)
 else:
-        with st.spinner("Checking transaction(s)..."):
+     with st.spinner("Checking transaction(s)..."):
+            result = loaded_model.predict(inputs)[0]
             st.success("Checked transaction!")
             if(result==0):
                 st.write("Congratulations! Not a fraudulent transaction.")
