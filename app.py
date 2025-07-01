@@ -69,17 +69,6 @@ if button_clicked:
         mc_oh.append(0)
 else:
         with st.spinner("Checking transaction(s)..."):
-            tt_oh[tt.index(tran_type)]=1
-            pg_oh[pg.index(pmt_gateway)]=1
-            ts_oh[ts.index(tran_state)]=1
-            mc_oh[mc.index(merch_cat)]=1
-            input = []
-            input.append(amt)
-            input.append(year)
-            input.append(month)
-            input = input+tt_oh+pg_oh+ts_oh+mc_oh
-            inputs = [input]
-            result = loaded_model.predict(inputs)[0]
             st.success("Checked transaction!")
             if(result==0):
                 st.write("Congratulations! Not a fraudulent transaction.")
